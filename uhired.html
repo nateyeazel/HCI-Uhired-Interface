@@ -1,14 +1,91 @@
 <!DOCTYPE html>
 
 <html>
+    
+    
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>uHired Student Job Search</title>
-	<link rel="stylesheet" href="uhired.css" type="text/css" charset="utf-8" />
+	 
+        <style>
+            
+
+#header {
+	width: 77%;
+	padding: 4px;
+	float: left;
+}
+
+#navigation {
+	height: 45px;
+	width: 77%;
+	box-shadow: 1px 1px 5px;
+}
+#navigation ul {
+	
+  	width: 77%;
+	list-style: none;
+	margin: 0;
+}
+#navigation li {
+	float: left;
+	font-size: 16px;
+	line-height: 40px;
+	width: 23%;
+}
+
+#navigation li.first {
+	margin-left: 0;
+	
+}
+#navigation li.selected {
+	background: #ffffff;
+}
+#navigation a {
+	color: #092f44;
+	font-weight: bold;
+	padding: 0 10px;
+	text-decoration: none;
+}
+#navigation a:hover {
+	background: #092f44;
+	color: #DDDDDD;
+}
+        
+        .head{
+            text-align: center;
+            font-size: 50px;
+            background-color: purple;
+            height: 10%;
+            padding: 10px;
+            font-family:sans-serif;
+        }
+        .login{
+            float: right;
+            height: 40%;
+            width: 20%;
+            border-style: groove;
+            padding: 5px;            
+        }     
+        .nav{
+            float: left;
+            width: 77%;
+            height: 30px;
+        }
+            
+        
+        </style>
+    
+    
+    
+    
 </head>
 
-<body background-color="#929292">
-	<div id="header">
+<body>
+    <div class ="head">
+    UHired
+</div>  
+   	<div id="header">
 		<div id="navigation">
 			<ul>
 				<li><a>Find Jobs</a></li>
@@ -18,5 +95,23 @@
 			</ul>
 		</div>
 	</div>
+
+    
+    
+    <div class = "login">
+        
+    <h2>Enter login information</h2>
+     <form>
+         <pre>
+NetID    <input type="text" name="firstname"><br>
+Password <input type="password" name="lastname"><br>
+
+           <input type="submit" value="Submit">
+
+</pre>
+</form>
+    
+    </div>
+	
 </body>
 </html>
