@@ -11,7 +11,7 @@
             
 
 #header {
-	width: 77%;
+	width: 60%;
 	padding: 4px;
 	float: left;
 }
@@ -73,9 +73,10 @@
             height: 30px;
         }
         .postings{
-            background-color:green;
+            border:1px solid black;
+            margin: 2px 2px 2px 2px;
             float:left;
-            width:78%;
+            width:60%;
         
         }
         .left-floater{
@@ -98,16 +99,7 @@
     <div class ="head">
     UHired
 </div>  
-   	<div id="header">
-		<div id="navigation">
-			<ul>
-				<li><a>Find Jobs</a></li>
-				<li><a>Review Jobs</a></li>
-				<li><a>Post Jobs</a></li>
-				<li><a>Ask a Question</a></li>
-			</ul>
-		</div>
-	</div>
+   	
 
   
     
@@ -126,13 +118,103 @@ Password <input type="password" name="lastname"><br>
 </form>
     
     </div>
+    
+    
+    
+    	<div style="width:14%; float:left; margin:5px 5px 5px 5px; border-right:1px solid black">
+		<div>
+		Job Industry<br><br>
+		<input class="filter" id="indAcademic" type="checkbox" name="industry" value="academic" CHECKED> Academic/Research</input><br>
+		<input class="filter" id="indClerical" type="checkbox" name="industry" value="clerical" CHECKED> Clerical</input><br>
+		<input class="filter" id="indFood" type="checkbox" name="industry" value="food" CHECKED> Food Service</input><br>
+		<input class="filter" id="indInfoTech" type="checkbox" name="industry" value="infoTech" CHECKED> Information Technology</input><br>
+		<!-- for line if we want it <hr noshade size=3> -->
+		<br>
+		</div>
+
+		<div>
+		Work Study?<br><br>
+		<input class="filter" id="WS" type="checkbox" name="workStudy" value="WS" CHECKED> Work Study</input><br>
+		<input class="filter" id="nonWS" type="checkbox" name="workStudy" value="nonWS" CHECKED> Non-Work Study</input><br>
+		<br>
+		</div>
+		<div>
+		Location<br><br>
+		<input class="filter" id="locOnCampus" type="checkbox" name="location" value="onCampus" CHECKED> On-Campus</input><br>
+		<input class="filter" id="locOffCampus" type="checkbox" name="location" value="offCampus" CHECKED> Off-Campus</input><br>
+		<br>
+		</div>
+		<div>
+		Pay Rate<br><br>
+		<input class="filter" id="payLessNine" type="checkbox" name="payRate" value="lessNine" CHECKED> &lt;$9/hour</input><br>
+		<input class="filter" id="payNineTen" type="checkbox" name="payRate" value="nineTen" CHECKED> $9-$10/hour</input><br>
+		<input class="filter" id="payGreaterTen" type="checkbox" name="payRate" value="greaterTen" CHECKED> &gt;$10/hour</input><br>
+		<br>
+		</div>
+		<div>
+		Distance From Campus<br> <br>
+		<input class="filter" id="disLessHalf" type="checkbox" name="distance" value="lessHalf" CHECKED> &lt; 1/2 Mile</input><br>
+		<input class="filter" id="disHalfToOne" type="checkbox" name="distance" value="halfToOne" CHECKED> 1/2 - 1 Mile</input><br>
+		<input class="filter" id="disGreaterOne" type="checkbox" name="distance" value="greaterOne" CHECKED> &gt; 1 Mile</input><br>
+		<br>
+		</div>
+		<div>
+		Date Posted<br><br>
+		<input class="filter" id="dateLastThree" type="checkbox" name="date" value="lastThree" CHECKED> Last 3 Days</input><br>
+		<input class="filter" id="dateLastTen" type="checkbox" name="date" value="lastTen" CHECKED> Last 10 Days</input><br>
+		<input class="filter" id="dateLastMonth" type="checkbox" name="date" value="lastMonth" CHECKED> Last Month</input><br>
+		<br>
+		</div>
+	</div>
+<div id="header">
+		<div id="navigation">
+			<ul>
+				<li><a>Find Jobs</a></li>
+				<li><a>Review Jobs</a></li>
+				<li><a>Post Jobs</a></li>
+				<li><a>Ask a Question</a></li>
+			</ul>
+		</div>
+	</div>
+    
+    
     <DIV class = "postings">
 <SPAN STYLE="float:left">Chipotle burrito maker</SPAN>
-<SPAN STYLE="float:right">Posted: 02/01/2014</SPAN> <br>
+<SPAN STYLE="float:right">Posted: 02/01/2014</SPAN> <br><br>
         <div class = "left-floater">Pay $9/hr</div>
-        <div class ="right-floater"> Description: As a burrito maker you will be responsible for front end client interactions as well as...</p>
-	<button class = "More"> More information </button></div>
+        <div class ="right-floater"> Description: As a burrito maker you will be responsible for front end client interactions as well as...<br>
+	<button class = "right-floater"> More information </button></div>
 </DIV>
+    <DIV class = "postings">
+<SPAN STYLE="float:left">NUIT</SPAN>
+<SPAN STYLE="float:right">Posted: 12/12/2014</SPAN> <br><br>
+        <div class = "left-floater">Pay $9/hr</div>
+        <div class ="right-floater"> Description:As an NUIT consultant, it will be your job to take calls from customers ...<br>
+	<button class = "right-floater"> More information </button></div>
+</DIV>
+    <DIV class = "postings">
+<SPAN STYLE="float:left">Pf Ryan Broderick</SPAN>
+<SPAN STYLE="float:right">Posted: 11/07/2013</SPAN> <br><br>
+        <div class = "left-floater">Pay negiotable</div>
+        <div class ="right-floater"> Description: It will be your job to TA for math 224 classes, which will include grading tests, homeworks ...<br>
+	<button class = "right-floater"> More information </button></div>
+</DIV>
+    <DIV class = "postings">
+<SPAN STYLE="float:left">Chipotle burrito maker</SPAN>
+<SPAN STYLE="float:right">Posted: 02/01/2014</SPAN> <br><br>
+        <div class = "left-floater">Pay $9/hr</div>
+        <div class ="right-floater"> Description: As a burrito maker you will be responsible for front end client interactions as well as...<br>
+	<button class = "right-floater"> More information </button></div>
+</DIV>
+    <DIV class = "postings">
+<SPAN STYLE="float:left">Chipotle burrito maker</SPAN>
+<SPAN STYLE="float:right">Posted: 02/01/2014</SPAN> <br><br>
+        <div class = "left-floater">Pay $9/hr</div>
+        <div class ="right-floater"> Description: As a burrito maker you will be responsible for front end client interactions as well as...<br>
+	<button class = "right-floater"> More information </button></div>
+</DIV>
+
+
 </DIV>
 	
 </body>
