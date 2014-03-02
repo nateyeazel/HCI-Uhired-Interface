@@ -1,8 +1,84 @@
 
+body {
+	margin-left: -5px;
+	margin-top: -5px;
+    font-family: 'Droid Sans';
+    /*fonts: oswald, arvo, droid sans;*/
+}
+
+/*for various sections*/
+.logo {
+    font-size: 110px;
+    background-color: #212121;
+    height: 135px;
+    width: 50%;
+    padding-top: 15px;
+    padding-left: 25%;
+    text-decoration: bold;
+    color: white;
+    float: left;
+    letter-spacing: 8px;
+    min-width: 768px;
+}
+.logo .sublogo {
+    padding-top: 20px;
+    margin-top: -125px;
+
+    font-size: 35px;
+    color: #E6BE5F;
+    font-style: italic;
+    float: left;
+    padding-left: 40%;
+}
+.login{
+    float: left;
+    height: 130px;
+    width: 24%;
+    min-width: 245px;
+    padding-left: 1%;
+    padding-top: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: #212121;
+    color: white;    
+}     
+.nav{
+    float: left;
+    width: 77%;
+    height: 30px;
+}
+.wpostings{
+    border:1px solid black;
+    margin: 2px 2px 2px 0px;
+    float:left;
+    padding: 10px 10px 10px 10px;
+    width: 61.5%;
+    background-color: #FFF9A8;
+}
+.nonwpostings{
+    border:1px solid black;
+    margin: 2px 2px 2px 0px;
+    float:left;
+    padding: 10px 10px 10px 10px;
+    width: 61.5%;
+    background-color: #9B9FB9;
+}
+
+.left-floater{
+    float: left;
+}
+.right-floater{
+    float: right;
+}
+
+
+
+/*for navigation bar*/
 
 #header {
-	width: 80%;
+	width: 59%;
 	margin: 0;
+	float: left;
 
 }
 
@@ -10,6 +86,9 @@
 	height: 47px;
 	width: 100%;
 	box-shadow: 0px 1px 5px;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 #navigation ul {

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>uHired - University Job Search</title>
+	<link rel="stylesheet" href="wcpan.css" type="text/css" charset="utf-8" />
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="wcpan.js"></script>
+</head>
+
+<body>
+	<div id="main">	
+			<div class="logo">uHired</div>
+
+			<div class="login"> 
+				<h3>Enter login information</h3>
+				<form>
+					<pre>
+Username <input type="text" name="firstname"><br>
+Password <input type="password" name="lastname"><br>
+		<input type="submit" value="Submit" width="20px">
+					</pre>
+				</form>
+			</div>
+
+
+			<div class="filters">
+				<div>Job Industry<br><br>
+					<input class="filter" id="indAcademic" type="checkbox" name="industry" value="academic" CHECKED> Academic/Research</input><br>
+					<input class="filter" id="indClerical" type="checkbox" name="industry" value="clerical" CHECKED> Clerical</input><br>
+					<input class="filter" id="indFood" type="checkbox" name="industry" value="food" CHECKED> Food Service</input><br>
+					<input class="filter" id="indInfoTech" type="checkbox" name="industry" value="infoTech" CHECKED> Information Technology</input><br>
+
+					<br>
+				</div>
+
+				<div>
+					Work Study?<br><br>
+					<input class="filter" id="WS" type="checkbox" name="workStudy" value="WS" CHECKED> Work Study</input><br>
+					<input class="filter" id="nonWS" type="checkbox" name="workStudy" value="nonWS" CHECKED> Non-Work Study</input><br>
+					<br>
+				</div>
+				<div>
+					Location<br><br>
+					<input class="filter" id="locOnCampus" type="checkbox" name="location" value="onCampus" CHECKED> On-Campus</input><br>
+					<input class="filter" id="locOffCampus" type="checkbox" name="location" value="offCampus" CHECKED> Off-Campus</input><br>
+					<br>
+				</div>
+				<div>
+					Pay Rate<br><br>
+					<input class="filter" id="payLessNine" type="checkbox" name="payRate" value="lessNine" CHECKED> &lt;$9/hour</input><br>
+					<input class="filter" id="payNineTen" type="checkbox" name="payRate" value="nineTen" CHECKED> $9-$10/hour</input><br>
+					<input class="filter" id="payGreaterTen" type="checkbox" name="payRate" value="greaterTen" CHECKED> &gt;$10/hour</input><br>
+					<br>
+				</div>
+				<div>
+					Distance From Campus<br> <br>
+					<input class="filter" id="disLessHalf" type="checkbox" name="distance" value="lessHalf" CHECKED> &lt; 1/2 Mile</input><br>
+					<input class="filter" id="disHalfToOne" type="checkbox" name="distance" value="halfToOne" CHECKED> 1/2 - 1 Mile</input><br>
+					<input class="filter" id="disGreaterOne" type="checkbox" name="distance" value="greaterOne" CHECKED> &gt; 1 Mile</input><br>
+					<br>
+				</div>
+				<div>
+					Date Posted<br><br>
+					<input class="filter" id="dateLastThree" type="checkbox" name="date" value="lastThree" CHECKED> Last 3 Days</input><br>
+					<input class="filter" id="dateLastTen" type="checkbox" name="date" value="lastTen" CHECKED> Last 10 Days</input><br>
+					<input class="filter" id="dateLastMonth" type="checkbox" name="date" value="lastMonth" CHECKED> Last Month</input><br>
+					<br>
+				</div>
+			</div>
+
+
+			<div id="header">
+				<div id="navigation">
+					<ul>
+						<a><li class="selected">Find Jobs</li></a>
+						<a><li>Review Jobs</li></a>
+
+						<a><li>Post Jobs</li></a>
+						<a><li>Ask a Question</li></a>
+					</ul>
+				</div>
+			</div>
+			<div class="content"></div> 
+			<div class="recommendations">Extra Features</div>
+	</div>
+</body>
+</html>

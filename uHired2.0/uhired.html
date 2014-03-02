@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>uHired Student Job Search</title>
+
+	<link rel="stylesheet" href="uhired.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:regular,italic,bold,bolditalic"/>
+
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="uhired.js"></script>
+</head>
+
+<body>
+
+	<a href="uhired.html"><div class ="logo">UHired</div></a>
+
+<!--=============Log In or Register Option at top=============-->
+	<div class = "login">
+
+		<a href="javascript:void(0)" onclick="createlightboxregister()"><div class="topbutton" id="reg">Register</div></a>
+		<a href="login.html"><div class="topbutton2" id="login">Log In</div></a>
+
+	</div>
+
+<!--=============Pop up Registration Box when 'Register' is selected=============-->
+	<div id="lightreg" class="popupregcontent">
+		<a href="javascript:void(0)" onclick = "closelightbox()" style="float:right">
+			<img src="images/close.png" alt=""/></a>
+
+		<table alight="center" cellpadding="5" cellspacing="5">
+			<tr>
+				<td colspan="2" class="Title" align="center">Create an Account</td>
+			</tr>
+			<tr>
+				<td class="label">First Name:</td>
+				<td align="center">
+					<input id="Field1" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Last Name:</td>
+				<td align="center">
+					<input id="Field2" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Email:</td>
+				<td align="center">
+					<input id="Field3" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Username:</td>
+				<td align="center">
+					<input id="Field4" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Password:</td>
+				<td align="center">
+					<input id="Field5" type="password" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Re-type Password:</td>
+				<td align="center">
+					<input id="Field6" type="password" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Student:</td>
+				<td alight="center">
+					<input id="Field7" type="checkbox"/></td>
+			</tr>
+			<tr>
+				<td class="label">Employer:</td>
+				<td alight="center">
+					<input id="Field7" type="checkbox"/></td>
+			</tr>
+
+		</table>
+		<a href="loggedin.html" style="text-decoration: none"><div id="register" class="regbutton">Register</div></a>
+	</div>
+
+<!--=============Pop up Login Box when 'Post' is selected=============-->
+	<div id="lightlogin" class="popuplogincontent">
+		<a href="javascript:void(0)" onclick = "closelightbox()" style="float:right">
+			<img src="images/close.png" alt=""/></a>
+
+		<table alight="center" cellpadding="5" cellspacing="5">
+			<tr>
+				<td colspan="2" class="Title" align="center">Log in to your account</td>
+			</tr>
+			<tr>
+				<td class="label">Username:</td>
+				<td align="center">
+					<input id="Field1" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Password:</td>
+				<td align="center">
+					<input id="Field2" type="password" size="40"/></td>
+			</tr>
+
+		</table>
+		<a href="loggedin.html" style="text-decoration: none"><div class="regbutton">Log in</div></a>
+		<a href="javascript:void(0)" onclick="closelightbox(); createlightboxregister()"><div class="text" class="last" style="text-align:center; margin-top:10px;">&laquo; Not registered?</div></a>
+	</div>
+
+<!--=============Filters section=============-->
+	<div class="filters">
+		<div class="filterhead">Filter Results</div>
+		<div><div class="category">Job Industry</div>
+			<input class="filter" type="checkbox" CHECKED> Academic/Research</input><br>
+			<input class="filter" type="checkbox" CHECKED> Administrative/Clerical</input><br>
+			<input class="filter" type="checkbox" CHECKED> Food Service</input><br>
+			<input class="filter" type="checkbox" CHECKED> Information Technology</input><br>
+			<input class="filter" type="checkbox" CHECKED> Other</input><br>
+		</div><br>
+
+		<div><div class="category">Work Study</div>
+			<input class="filter" type="checkbox" CHECKED> Work-Study</input><br>
+			<input class="filter" type="checkbox" CHECKED> Non-Work-Study</input><br>
+		</div><br>
+
+		<div><div class="category">Location</div>
+			<input class="filter" type="checkbox" CHECKED> On-Campus (North)</input><br>
+			<input class="filter" type="checkbox" CHECKED> On-Campus (South)</input><br>
+			<input class="filter" type="checkbox" CHECKED> On-Campus (Mid)</input><br>
+			<input class="filter" type="checkbox" CHECKED> Off-Campus</input><br>
+		</div><br>
+
+		<div><div class="category">Pay Rate</div>
+			<input class="filter" type="checkbox" CHECKED> &lt; $9/hour</input><br>
+			<input class="filter" type="checkbox" CHECKED> $9-$10/hour</input><br>
+			<input class="filter" type="checkbox" CHECKED> &gt; $10/hour</input><br>
+		</div><br>
+
+		<div><div class="category">Rating</div>
+			<input class="filter" type="checkbox" CHECKED> &gt; 4.0/5.0</input><br>
+			<input class="filter" type="checkbox" CHECKED> &gt; 3.0/5.0</input><br>
+			<input class="filter" type="checkbox" CHECKED> &gt; 2.0/5.0</input><br>
+			<input class="filter" type="checkbox" CHECKED> &gt; 1.0/5.0</input><br>
+			<input class="filter" type="checkbox" CHECKED> &lt; 1.0/5.0</input><br>
+		</div><br>
+
+		<div><div class="category">Distance From Campus (Center)</div>
+			<input class="filter" type="checkbox" CHECKED> 0 Miles (On Campus)</input><br>
+			<input class="filter" type="checkbox" CHECKED> &lt; 1/2 Mile</input><br>
+			<input class="filter" type="checkbox" CHECKED> 1/2 - 1 Mile</input><br>
+			<input class="filter" type="checkbox" CHECKED> 1 - 2 Miles</input><br>
+			<input class="filter" type="checkbox" CHECKED> &gt; 2 Miles</input><br>
+		</div><br>
+
+		<div><div class="category">Date Posted</div>
+			<input class="filter" type="checkbox" CHECKED> Last 3 Days</input><br>
+			<input class="filter" type="checkbox" CHECKED> Last 7 Days</input><br>
+			<input class="filter" type="checkbox" CHECKED> Last 14 Days</input><br>
+			<input class="filter" type="checkbox" CHECKED> Last Month</input><br>
+		</div><br>
+
+		<div><div class="category">Other</div>
+			<input class="filter" type="checkbox" CHECKED> Flexible Hours</input><br>
+			<input class="filter" type="checkbox" CHECKED> Hires International Students</input><br>
+			<input class="filter" type="checkbox" CHECKED> Offers Summer Employment</input><br>
+		</div><br>
+
+
+	</div>
+
+<!--=============Navigation bar section=============-->
+	<div id="header">
+		<div id="navigation">
+			<ul>
+				<a href="uhired.html"><li class="selected">Find Jobs</li></a>
+				<a><li>Review Jobs</li></a>
+
+				<a href="javascript:void(0)" onclick="createlightboxlogin()"><div class="topbutton" id="reg"><li>Post Jobs</li></a>
+				<a><li>Ask a Question</li></a>
+			</ul>
+		</div>
+	</div>
+
+<!--=============Job posting list=============-->
+<div class="maincontent">
+		<div class="posting">
+			<div class="title">Associate Consultant</div>
+			<a href="http://www.it.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Northwestern University Information Technology)</div></a>
+			<div class="wage">$9 - $10/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+		<div class="nonworkstudy">
+			<div class="title">Burrito Maker</div>
+			<a href="" target="_blank"><div class="employer"> &nbsp;(Chipotle)</div></a>
+			<div class="wage">$10 - $11/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+		<div class="nonworkstudy">
+			<div class="title">Cashier</div>
+			<a href="http://www.subway.com/" target="_blank"><div class="employer"> &nbsp;(Subway)</div></a>
+			<div class="wage">$10 - $11/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+		<div class="workstudy">
+			<div class="title">Core Reserves Attendant</div>
+			<a href="http://www.library.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Main Library)</div></a>
+			<div class="wage">$9 - $10/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+		<div class="nonworkstudy">
+			<div class="title">Norris Desk Clerk</div>
+			<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
+			<div class="wage">$9 - $10/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+		<div class="nonworkstudy">
+			<div class="title">Sandwich Maker</div>
+			<a href="" target="_blank"><div class="employer"> &nbsp;(Al's Deli)</div></a>
+			<div class="wage">$9 - $10/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+		<div class="posting">
+			<div class="title">Teaching Assistant</div>
+			<a href="http://math.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Math Department)</div></a>
+			<div class="wage">$9/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+		<div class="workstudy">
+			<div class="title">Technology Assistant</div>
+			<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
+			<div class="wage">$9 - $10/hour</div>
+			<div class="details">
+				<div class="first">Description:&nbsp;</div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+			</div>
+		</div>
+
+	</div>
+
+
+<!--=============Registration box remains hidden until these are changed=============-->
+	<div id="fade" class="overlay"></div>
+
+</body>
+
+</html>
