@@ -6,128 +6,31 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>uHired Student Job Search</title>
-<<<<<<< HEAD:menu.html
-	<link rel="stylesheet" href="uhired.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="navbar.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans:regular,italic,bold,bolditalic"/>
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="uhired.js"></script>
-=======
-	 
-        <style>
-            
+	<script src="navbar.js"></script>
 
-#header {
-	width: 60%;
-	padding: 4px;
-	float: left;
-}
 
-#navigation {
-	height: 45px;
-	width: 75%;
-	box-shadow: 1px 1px 5px;
-}
-#navigation ul {
-	
-  	width: 77%;
-	list-style: none;
-	margin: 0;
-}
-#navigation li {
-	float: left;
-	font-size: 16px;
-	line-height: 40px;
-	width: 23%;
-}
-
-#navigation li.first {
-	margin-left: 0;
-	
-}
-#navigation li.selected {
-	background: #ffffff;
-}
-#navigation a {
-	color: #092f44;
-	font-weight: bold;
-	padding: 0 10px;
-	text-decoration: none;
-}
-#navigation a:hover {
-	background: #092f44;
-	color: #DDDDDD;
-}
-        
-        .head{
-            text-align: center;
-            font-size: 50px;
-            background-color: purple;
-            height: 10%;
-            padding: 10px;
-            font-family:sans-serif;
-        }
-        .login{
-            float: right;
-            height: 40%;
-            width: 20%;
-            border-style: groove;
-            padding: 5px;            
-        }     
-        .nav{
-            float: left;
-            width: 77%;
-            height: 30px;
-        }
-        .postings{
-            border:1px solid black;
-            margin: 2px 2px 2px 2px;
-            float:left;
-            width:60%;
-        
-        }
-        .left-floater{
-            float: left;
-        }
-        .right-floater{
-            float: right;
-        }
-            
-            
-        
-        </style>
-    
-    
-    
-    
->>>>>>> FETCH_HEAD:uhired.html
 </head>
 
 <body>
-    <div class ="head">
-    UHired
-</div>  
-   	
-
-  
-    
+    <div class ="logo">UHired</div>
     
     <div class = "login">
-        
-    <h2>Enter login information</h2>
      <form>
-         <pre>
-NetID    <input type="text" name="firstname"><br>
-Password <input type="password" name="lastname"><br>
-
-           <input type="submit" value="Submit">
-
-</pre>
+     	<div><label for="user_username">Username</label><br>
+     		<input autofocus="autofocus" id="user_username" name="user[username]" size="30" type="text" /></div><br>
+     	<div><label for="user_password">Password</label><br>
+     		<input autofocus="autofocus" id="user_password" name="user[password]" size="30" type="text" /></div>
 </form>
     
     </div>
     
     
     
-    	<div style="width:14%; float:left; margin:5px 5px 5px 5px; border-right:1px solid black">
+    	<div style="width:14%; float:left; margin:5px 5px 5px 5px; border-right:1px solid black; background-color: white; padding-left: 5px">
 		<div>
 		Job Industry<br><br>
 		<input class="filter" id="indAcademic" type="checkbox" name="industry" value="academic" CHECKED> Academic/Research</input><br>
@@ -177,7 +80,7 @@ Password <input type="password" name="lastname"><br>
 
 
 
-<div id="header">
+	<div id="header">
 		<div id="navigation">
 			<ul>
 				<a><li class="selected">Find Jobs</li></a>
@@ -195,35 +98,35 @@ Password <input type="password" name="lastname"><br>
 
     
     
-    <DIV class = "postings">
+    <DIV class = "nonwpostings">
 <SPAN STYLE="float:left">Chipotle burrito maker</SPAN>
 <SPAN STYLE="float:right">Posted: 02/01/2014</SPAN> <br><br>
         <div class = "left-floater">Pay $9/hr</div>
         <div class ="right-floater"> Description: As a burrito maker you will be responsible for front end client interactions as well as...<br>
 	<button class = "right-floater"> More information </button></div>
 </DIV>
-    <DIV class = "postings">
+    <DIV class = "wpostings">
 <SPAN STYLE="float:left">NUIT</SPAN>
 <SPAN STYLE="float:right">Posted: 12/12/2014</SPAN> <br><br>
         <div class = "left-floater">Pay $9/hr</div>
         <div class ="right-floater"> Description:As an NUIT consultant, it will be your job to take calls from customers ...<br>
 	<button class = "right-floater"> More information </button></div>
 </DIV>
-    <DIV class = "postings">
+    <DIV class = "wpostings">
 <SPAN STYLE="float:left">Pf Ryan Broderick</SPAN>
 <SPAN STYLE="float:right">Posted: 11/07/2013</SPAN> <br><br>
         <div class = "left-floater">Pay negiotable</div>
         <div class ="right-floater"> Description: It will be your job to TA for math 224 classes, which will include grading tests, homeworks ...<br>
 	<button class = "right-floater"> More information </button></div>
 </DIV>
-    <DIV class = "postings">
+    <DIV class = "nonwpostings">
 <SPAN STYLE="float:left">Chipotle burrito maker</SPAN>
 <SPAN STYLE="float:right">Posted: 02/01/2014</SPAN> <br><br>
         <div class = "left-floater">Pay $9/hr</div>
         <div class ="right-floater"> Description: As a burrito maker you will be responsible for front end client interactions as well as...<br>
 	<button class = "right-floater"> More information </button></div>
 </DIV>
-    <DIV class = "postings">
+    <DIV class = "nonwpostings">
 <SPAN STYLE="float:left">Chipotle burrito maker</SPAN>
 <SPAN STYLE="float:right">Posted: 02/01/2014</SPAN> <br><br>
         <div class = "left-floater">Pay $9/hr</div>
