@@ -43,6 +43,21 @@ function filterWorkStudy() {
 		};
 	}
 }
+
+function filterNonWorkStudy() {
+	var elements = new Array();
+	elements = getElementsByClassName('nonworkstudy');
+	if(document.getElementById('nonWorkStudyFilter').checked) {
+		for(i in elements ){
+		elements[i].style.display = "none";
+		};
+	}
+	else {
+	for(i in elements ){
+		elements[i].style.display = "block";
+		};
+	}
+}
 function createlightboxregister() {
 	document.getElementById('lightreg').style.display='block';
 	document.getElementById('fade').style.display='block';
