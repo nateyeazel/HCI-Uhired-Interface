@@ -30,60 +30,59 @@
 	<div class="filters">
 		<div class="filterhead">Filter Results</div>
 		<div><div class="category">Job Industry</div>
-			<input class="filter" id="acFilter" type="checkbox" CHECKED> <label for="acFilter">Academic/Research</label></input><br>
-			<input class="filter" id="adFilter" type="checkbox" CHECKED> <label for="adFilter">Administrative/Clerical</label></input><br>
-			<input class="filter" id="foodFilter" type="checkbox" CHECKED> <label for="foodFilter">Food Service</label></input><br>
-			<input class="filter" id="infoFilter" type="checkbox" CHECKED> <label for="infoFilter">Information Technology</label></input><br>
-			<input class="filter" id="otherFilter" type="checkbox" CHECKED> <label for="otherFilter">Other</label></input><br>
+			<input class="filter" onclick="addFilter('a/r', 'acFilter');" id="acFilter" type="checkbox" CHECKED> <label for="acFilter">Academic/Research</label></input><br>
+			<input class="filter" onclick="addFilter('a/c', 'adFilter');" id="adFilter" type="checkbox" CHECKED> <label for="adFilter">Administrative/Clerical</label></input><br>
+			<input class="filter" onclick="addFilter('fs', 'foodFilter');" id="foodFilter" type="checkbox" CHECKED> <label for="foodFilter">Food Service</label></input><br>
+			<input class="filter" onclick="addFilter('it', 'infoFilter');" id="infoFilter" type="checkbox" CHECKED> <label for="infoFilter">Information Technology</label></input><br>
+			<input class="filter" onclick="addFilter('other', 'otherFilter');" id="otherFilter" type="checkbox" CHECKED> <label for="otherFilter">Other</label></input><br>
 		</div><br>
 
 		<div><div class="category">Work Study</div>
-			<input class="filter" id="workStudyFilter" type="checkbox" CHECKED> <label for="workStudyFilter">Work-Study</label></input><br>
-			<input class="filter" id="nonWorkStudyFilter" type="checkbox" CHECKED> <label for="nonWorkStudyFilter">Non-Work-Study</label></input><br>
+			<input class="filter" onclick="addFilter('ws', 'workStudyFilter')" id="workStudyFilter" type="checkbox" CHECKED> <label for="workStudyFilter">Work-Study</label></input><br>
+			<input class="filter" onclick="addFilter('nws', 'nonWorkStudyFilter')" id="nonWorkStudyFilter" type="checkbox" CHECKED> <label for="nonWorkStudyFilter">Non-Work-Study</label></input><br>
 		</div><br>
 
 		<div><div class="category">Location</div>
-			<input class="filter" id="onCampusNorthFilter" type="checkbox" CHECKED> <label for="onCampusNorthFilter">On-Campus (North)</label></input><br>
-			<input class="filter" id="onCampusSouthFilter" type="checkbox" CHECKED> <label for="onCampusSouthFilter">On-Campus (South)</label></input><br>
-			<input class="filter" id="onCampusMidFilter" type="checkbox" CHECKED> <label for="onCampusMidFilter">On-Campus (Mid)</label></input><br>
-			<input class="filter" id="offCampusFilter" type="checkbox" CHECKED> <label for="offCampusFilter">Off-Campus</label></input><br>
+			<input class="filter" onclick="addFilter('ocn', 'onCampusNorthFilter');" id="onCampusNorthFilter" type="checkbox" CHECKED> <label for="onCampusNorthFilter">On-Campus (North)</label></input><br>
+			<input class="filter" onclick="addFilter('ocs', 'onCampusSouthFilter');" id="onCampusSouthFilter" type="checkbox" CHECKED> <label for="onCampusSouthFilter">On-Campus (South)</label></input><br>
+			<input class="filter" onclick="addFilter('ocm', 'onCampusMidFilter');" id="onCampusMidFilter" type="checkbox" CHECKED> <label for="onCampusMidFilter">On-Campus (Mid)</label></input><br>
+			<input class="filter" onclick="addFilter('offc', 'offCampusFilter');" id="offCampusFilter" type="checkbox" CHECKED> <label for="offCampusFilter">Off-Campus</label></input><br>
 		</div><br>
 
 		<div><div class="category">Pay Rate</div>
-			<input class="filter" id="nineDollarFilter" type="checkbox" CHECKED> <label for="nineDollarFilter">&lt; $9/hour</label></input><br>
-			<input class="filter" id="nineToTenFilter" type="checkbox" CHECKED> <label for="nineToTenFilter">$9-$10/hour</label></input><br>
-			<input class="filter" id="tenDollarFilter" type="checkbox" CHECKED> <label for="tenDollarFilter">&gt; $10/hour</label></input><br>
+			<input class="filter" onclick="addFilter('9', 'nineDollarFilter');" id="nineDollarFilter" type="checkbox" CHECKED> <label for="nineDollarFilter">&lt; $9/hour</label></input><br>
+			<input class="filter" onclick="addFilter('910', 'nineToTenFilter');" id="nineToTenFilter" type="checkbox" CHECKED> <label for="nineToTenFilter">$9-$10/hour</label></input><br>
+			<input class="filter" onclick="addFilter('1011', 'tenDollarFilter');" id="tenDollarFilter" type="checkbox" CHECKED> <label for="tenDollarFilter">&gt; $10/hour</label></input><br>
 		</div><br>
 
 		<div><div class="category">Rating</div>
-			<input class="filter" id="greaterFourRatingFilter" type="checkbox" CHECKED> <label for="greaterFourRatingFilter">&gt; 4.0/5.0</label></input><br>
-			<input class="filter" id="greaterThreeRatingFilter" type="checkbox" CHECKED> <label for="greaterThreeRatingFilter">&gt; 3.0/5.0</label></input><br>
-			<input class="filter" id="greaterTwoRatingFilter" type="checkbox" CHECKED> <label for="greaterTwoRatingFilter">&gt; 2.0/5.0</label></input><br>
-			<input class="filter" id="greaterOneRatingFilter" type="checkbox" CHECKED> <label for="greaterOneRatingFilter">&gt; 1.0/5.0</label></input><br>
-			<input class="filter" id="lessOneRatingFilter" type="checkbox" CHECKED> <label for="lessOneRatingFilter">&lt; 1.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('4', 'greaterFourRatingFilter')" id="greaterFourRatingFilter" type="checkbox" CHECKED> <label for="greaterFourRatingFilter">&gt; 4.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('3', 'greaterThreeRatingFilter')" id="greaterThreeRatingFilter" type="checkbox" CHECKED> <label for="greaterThreeRatingFilter">&gt; 3.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('2', 'greaterTwoRatingFilter')" id="greaterTwoRatingFilter" type="checkbox" CHECKED> <label for="greaterTwoRatingFilter">&gt; 2.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('1', 'greaterOneRatingFilter')" id="greaterOneRatingFilter" type="checkbox" CHECKED> <label for="greaterOneRatingFilter">&gt; 1.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('lt1', 'lessOneRatingFilter')" id="lessOneRatingFilter" type="checkbox" CHECKED> <label for="lessOneRatingFilter">&lt; 1.0/5.0</label></input><br>
 		</div><br>
 
 		<div><div class="category">Distance From Campus (Center)</div>
-			<input class="filter" id="zeroMileDistanceFilter" type="checkbox" CHECKED> <label for="zeroMileDistanceFilter">0 Miles (On Campus)</label></input><br>
-			<input class="filter" id="lessHalfMileDistanceFilter" type="checkbox" CHECKED> <label for="lessHalfMileDistanceFilter">&lt; 1/2 Mile</label></input><br>
-			<input class="filter" id="halfToOneMileDistanceFilter" type="checkbox" CHECKED> <label for="halfToOneMileDistanceFilter">1/2 - 1 Mile</label></input><br>
-			<input class="filter" id="oneToTwoMileDistanceFilter" type="checkbox" CHECKED> <label for="oneToTwoMileDistanceFilter">1 - 2 Miles</label></input><br>
-			<input class="filter" id="greaterTwoMileDistanceFilter" type="checkbox" CHECKED> <label for="greaterTwoMileDistanceFilter">&gt; 2 Miles</label></input><br>
+			<input class="filter" onclick="addFilter('0m', 'zeroMileDistanceFilter')" id="zeroMileDistanceFilter" type="checkbox" CHECKED> <label for="zeroMileDistanceFilter">0 Miles (On Campus)</label></input><br>
+			<input class="filter" onclick="addFilter('1/2m', 'lessHalfMileDistanceFilter')" id="lessHalfMileDistanceFilter" type="checkbox" CHECKED> <label for="lessHalfMileDistanceFilter">&lt; 1/2 Mile</label></input><br>
+			<input class="filter" onclick="addFilter('1/2-1m', 'halfToOneMileDistanceFilter')" id="halfToOneMileDistanceFilter" type="checkbox" CHECKED> <label for="halfToOneMileDistanceFilter">1/2 - 1 Mile</label></input><br>
+			<input class="filter" onclick="addFilter('1-2m', 'oneToTwoMileDistanceFilter')" id="oneToTwoMileDistanceFilter" type="checkbox" CHECKED> <label for="oneToTwoMileDistanceFilter">1 - 2 Miles</label></input><br>
+			<input class="filter" onclick="addFilter('2m', 'greaterTwoMileDistanceFilter')" id="greaterTwoMileDistanceFilter" type="checkbox" CHECKED> <label for="greaterTwoMileDistanceFilter">&gt; 2 Miles</label></input><br>
 		</div><br>
 
 		<div><div class="category">Date Posted</div>
-			<input class="filter" id="lastThreeDateFilter" type="checkbox" CHECKED> <label for="lastThreeDateFilter">Last 3 Days</label></input><br>
-			<input class="filter" id="lastSevenDateFilter" type="checkbox" CHECKED> <label for="lastSevenDateFilter">Last 7 Days</label></input><br>
-			<input class="filter" id="lastFourteenDateFilter" type="checkbox" CHECKED> <label for="lastFourteenDateFilter">Last 14 Days</label></input><br>
-			<input class="filter" id="lastMonthDateFilter" type="checkbox" CHECKED> <label for="lastMonthDateFilter">Last Month</label></input><br>
+			<input class="filter" onclick="addFilter('last3', 'lastThreeDateFilter')" id="lastThreeDateFilter" type="checkbox" CHECKED> <label for="lastThreeDateFilter">Last 3 Days</label></input><br>
+			<input class="filter" onclick="addFilter('last7', 'lastSevenDateFilter')" id="lastSevenDateFilter" type="checkbox" CHECKED> <label for="lastSevenDateFilter">Last 7 Days</label></input><br>
+			<input class="filter" onclick="addFilter('last14', 'lastFourteenDateFilter')" id="lastFourteenDateFilter" type="checkbox" CHECKED> <label for="lastFourteenDateFilter">Last 14 Days</label></input><br>
+			<input class="filter" onclick="addFilter('lastm', 'lastMonthDateFilter')" id="lastMonthDateFilter" type="checkbox" CHECKED> <label for="lastMonthDateFilter">Last Month</label></input><br>
 		</div><br>
 
 		<div><div class="category">Other</div>
-			<input class="filter" id="flexHoursOtherFilter" type="checkbox" CHECKED> <label for="flexHoursOtherFilter">Flexible Hours</label></input><br>
-			<input class="filter" id="internationalOtherFilter" type="checkbox" CHECKED> <label for="internationalOtherFilter">Hires International Students</label></input><br>
-			<input class="filter" id="summerOtherFilter" type="checkbox" CHECKED> <label for="summerOtherFilter">Offers Summer Employment</label></input><br>
+			<input class="filter" onclick="addFilter2('fh', 'flexHoursOtherFilter')" id="flexHoursOtherFilter" type="checkbox"> <label for="flexHoursOtherFilter">Flexible Hours</label></input><br>
+			<input class="filter" onclick="addFilter2('his', 'internationalOtherFilter')" id="internationalOtherFilter" type="checkbox"> <label for="internationalOtherFilter">Hires International Students</label></input><br>
+			<input class="filter" onclick="addFilter2('ose', 'summerOtherFilter')" id="summerOtherFilter" type="checkbox"> <label for="summerOtherFilter">Offers Summer Employment</label></input><br>
 		</div><br>
-
 
 	</div>
 
@@ -106,7 +105,7 @@
 
 <!--
 	Consultant job info-->
-		<div id="consultant" id="it" id="both" class="popupdescription">
+		<div id="consultant" class="popupdescription">
 			<a href="javascript:void(0)" onclick = "closeJobDesc('consultant')" style="float:right">
 				<img src="images/close.png" alt=""/></a>
 			<div class="desctitle">Associate Consultant</div>
@@ -132,7 +131,7 @@
 
 
 		<label href="javascript:void(0)" onclick="createJobDesc('consultant')">
-			<div class="posting">
+			<div class="posting it ons offc 910 4 1/2m lastm">
 				<div class="title">Associate Consultant</div>
 				<a href="http://www.it.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Northwestern University Information Technology)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -172,7 +171,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('chipotle')">
-			<div class="nonworkstudy">
+			<div class="nonworkstudy fs nws offc 1011 3 1/2-1m lastm fh his">
 				<div class="title">Burrito Maker</div>
 				<a href="" target="_blank"><div class="employer"> &nbsp;(Chipotle)</div></a>
 				<div class="wage">$10 - $11/hour</div>
@@ -212,7 +211,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('subway')">
-			<div class="nonworkstudy">
+			<div class="nonworkstudy nws fs offc 1011 2 1/2-1m lastm">
 				<div class="title">Cashier</div>
 				<a href="http://www.subway.com/" target="_blank"><div class="employer"> &nbsp;(Subway)</div></a>
 				<div class="wage">$10 - $11/hour</div>
@@ -252,7 +251,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('library')">
-			<div class="workstudy">
+			<div class="workstudy a/c ws ocm 910 4 0m last3 ose">
 				<div class="title">Core Reserves Attendant</div>
 				<a href="http://www.library.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Main Library)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -292,7 +291,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('deskclerk')">
-			<div class="nonworkstudy">
+			<div class="nonworkstudy a/c nws onm 910 2 0m lastm his ose">
 				<div class="title">Norris Desk Clerk</div>
 				<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -332,7 +331,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('sandwich')">
-			<div class="nonworkstudy">
+			<div class="nonworkstudy fs nws offc 910 4 1-2m lastm fh his ose">
 				<div class="title">Sandwich Maker</div>
 				<a href="" target="_blank"><div class="employer"> &nbsp;(Al's Deli)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -372,7 +371,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('mathta')">
-			<div class="posting">
+			<div class="posting a/r ocm 9 2 0m last7 ose">
 				<div class="title">Teaching Assistant</div>
 				<a href="http://math.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Math Department)</div></a>
 				<div class="wage">$9/hour</div>
@@ -412,7 +411,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('norristech')">
-			<div class="workstudy">
+			<div class="workstudy it ws onm 910 3 0m lastm ose">
 				<div class="title">Technology Assistant</div>
 				<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
 				<div class="wage">$9 - $10/hour</div>

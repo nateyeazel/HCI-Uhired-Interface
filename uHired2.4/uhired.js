@@ -71,6 +71,22 @@ function addFilter(classname, node) {
 	}
 }
 
+function addFilter2(classname, node) {
+	var elements = new Array();
+	elements = getElementsByClassName(classname);
+
+	if(document.getElementById(node).checked) {
+		for(i in elements) {
+			elements[i].style.display = "block";
+		};
+	}
+	else {
+		for(i in elements) {
+			elements[i].style.display = "none";
+		};
+	}
+}
+
 
 
 

@@ -154,18 +154,17 @@
 		</div><br>
 
 		<div><div class="category">Date Posted</div>
-			<input class="filter" id="lastThreeDateFilter" type="checkbox" CHECKED> <label for="lastThreeDateFilter">Last 3 Days</label></input><br>
-			<input class="filter" id="lastSevenDateFilter" type="checkbox" CHECKED> <label for="lastSevenDateFilter">Last 7 Days</label></input><br>
-			<input class="filter" id="lastFourteenDateFilter" type="checkbox" CHECKED> <label for="lastFourteenDateFilter">Last 14 Days</label></input><br>
-			<input class="filter" id="lastMonthDateFilter" type="checkbox" CHECKED> <label for="lastMonthDateFilter">Last Month</label></input><br>
+			<input class="filter" onclick="addFilter('last3', 'lastThreeDateFilter')" id="lastThreeDateFilter" type="checkbox" CHECKED> <label for="lastThreeDateFilter">Last 3 Days</label></input><br>
+			<input class="filter" onclick="addFilter('last7', 'lastSevenDateFilter')" id="lastSevenDateFilter" type="checkbox" CHECKED> <label for="lastSevenDateFilter">Last 7 Days</label></input><br>
+			<input class="filter" onclick="addFilter('last14', 'lastFourteenDateFilter')" id="lastFourteenDateFilter" type="checkbox" CHECKED> <label for="lastFourteenDateFilter">Last 14 Days</label></input><br>
+			<input class="filter" onclick="addFilter('lastm', 'lastMonthDateFilter')" id="lastMonthDateFilter" type="checkbox" CHECKED> <label for="lastMonthDateFilter">Last Month</label></input><br>
 		</div><br>
 
 		<div><div class="category">Other</div>
-			<input class="filter" id="flexHoursOtherFilter" type="checkbox" CHECKED> <label for="flexHoursOtherFilter">Flexible Hours</label></input><br>
-			<input class="filter" id="internationalOtherFilter" type="checkbox" CHECKED> <label for="internationalOtherFilter">Hires International Students</label></input><br>
-			<input class="filter" id="summerOtherFilter" type="checkbox" CHECKED> <label for="summerOtherFilter">Offers Summer Employment</label></input><br>
+			<input class="filter" onclick="addFilter2('fh', 'flexHoursOtherFilter')" id="flexHoursOtherFilter" type="checkbox"> <label for="flexHoursOtherFilter">Flexible Hours</label></input><br>
+			<input class="filter" onclick="addFilter2('his', 'internationalOtherFilter')" id="internationalOtherFilter" type="checkbox"> <label for="internationalOtherFilter">Hires International Students</label></input><br>
+			<input class="filter" onclick="addFilter2('ose', 'summerOtherFilter')" id="summerOtherFilter" type="checkbox"> <label for="summerOtherFilter">Offers Summer Employment</label></input><br>
 		</div><br>
-
 
 	</div>
 
@@ -184,7 +183,6 @@
 
 <!--=============Job posting list=============-->
 	<div class="maincontent">
-
 
 <!--
 	Consultant job info-->
@@ -214,7 +212,7 @@
 
 
 		<label href="javascript:void(0)" onclick="createJobDesc('consultant')">
-			<div class="posting it ws nws ons offc 910 4 1/2m lastm fh his ose">
+			<div class="posting it ons offc 910 4 1/2m lastm">
 				<div class="title">Associate Consultant</div>
 				<a href="http://www.it.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Northwestern University Information Technology)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -254,7 +252,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('chipotle')">
-			<div class="nonworkstudy fs nws offc 1011 3 1/2-1m lastm ose">
+			<div class="nonworkstudy fs nws offc 1011 3 1/2-1m lastm fh his">
 				<div class="title">Burrito Maker</div>
 				<a href="" target="_blank"><div class="employer"> &nbsp;(Chipotle)</div></a>
 				<div class="wage">$10 - $11/hour</div>
@@ -294,7 +292,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('subway')">
-			<div class="nonworkstudy nws fs offc 1011 2 1/2-1m lastm fh his ose">
+			<div class="nonworkstudy nws fs offc 1011 2 1/2-1m lastm">
 				<div class="title">Cashier</div>
 				<a href="http://www.subway.com/" target="_blank"><div class="employer"> &nbsp;(Subway)</div></a>
 				<div class="wage">$10 - $11/hour</div>
@@ -334,7 +332,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('library')">
-			<div class="workstudy a/c ws ocm 910 4 0m last3 fh his">
+			<div class="workstudy a/c ws ocm 910 4 0m last3 ose">
 				<div class="title">Core Reserves Attendant</div>
 				<a href="http://www.library.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Main Library)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -374,7 +372,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('deskclerk')">
-			<div class="nonworkstudy a/c nws onm 910 2 0m lastm fh">
+			<div class="nonworkstudy a/c nws onm 910 2 0m lastm his ose">
 				<div class="title">Norris Desk Clerk</div>
 				<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -414,7 +412,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('sandwich')">
-			<div class="nonworkstudy fs nws offc 910 4 1-2m lastm">
+			<div class="nonworkstudy fs nws offc 910 4 1-2m lastm fh his ose">
 				<div class="title">Sandwich Maker</div>
 				<a href="" target="_blank"><div class="employer"> &nbsp;(Al's Deli)</div></a>
 				<div class="wage">$9 - $10/hour</div>
@@ -454,7 +452,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('mathta')">
-			<div class="posting a/r ws nws ocm 9 2 0m last7 fh his">
+			<div class="posting a/r ocm 9 2 0m last7 ose">
 				<div class="title">Teaching Assistant</div>
 				<a href="http://math.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Math Department)</div></a>
 				<div class="wage">$9/hour</div>
@@ -494,7 +492,7 @@
 		</div>
 
 		<label href="javascript:void(0)" onclick="createJobDesc('norristech')">
-			<div class="workstudy it ws onm 910 3 0m lastm fh his">
+			<div class="workstudy it ws onm 910 3 0m lastm ose">
 				<div class="title">Technology Assistant</div>
 				<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
 				<div class="wage">$9 - $10/hour</div>
