@@ -301,6 +301,10 @@ body {
 	margin-bottom: 5px;
 }
 
+.styledCheckbox {
+	display: inline-block;
+}
+
 /*
 ======================Styling for navigation bar======================
 */
