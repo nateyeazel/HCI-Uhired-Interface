@@ -12,7 +12,8 @@ body {
 }
 
 .logo {
-	background-color: black;
+	background-color: #0B243B;
+	background: -webkit-linear-gradient(top, #0B243B 0%, black 100%);
 	opacity: 0.8;
     height: 135px;
     width: 75%;
@@ -36,6 +37,7 @@ body {
 
 .login {
 	background-color: black;
+	background: -webkit-linear-gradient(top, #0B243B 0%, black 100%);
 	opacity: 0.8;
 	height: 130px;
 	width: 25%;
