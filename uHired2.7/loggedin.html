@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>uHired Student Job Search</title>
+
+	<link rel="stylesheet" href="uhired.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:regular,italic,bold,bolditalic"/>
+
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="jquery.screwdefaultbuttonsV2.min.js" ></script>
+	<script src="uhired.js"></script>
+</head>
+
+<body onload="document.registereduser.username.focus()">
+
+	<div class ="logo">UHired</div>
+
+	<div class = "logout">
+		<a href="uhired.html"><div class="logoutbutton">Log out</div></a></div>
+
+
+
+<!--=============Filters section=============-->
+	<div class="filters">
+		<div class="filterhead">Filter Results</div>
+		<div><div class="category">Job Industry</div>
+			<input class="filter" onclick="addFilter('a/r', 'acFilter');" id="acFilter" type="checkbox" CHECKED> <label for="acFilter">Academic / Research</label></input><br>
+			<input class="filter" onclick="addFilter('a/c', 'adFilter');" id="adFilter" type="checkbox" CHECKED> <label for="adFilter">Administrative / Clerical</label></input><br>
+			<input class="filter" onclick="addFilter('fs', 'foodFilter');" id="foodFilter" type="checkbox" CHECKED> <label for="foodFilter">Food Service</label></input><br>
+			<input class="filter" onclick="addFilter('it', 'infoFilter');" id="infoFilter" type="checkbox" CHECKED> <label for="infoFilter">Information Technology</label></input><br>
+			<input class="filter" onclick="addFilter('other', 'otherFilter');" id="otherFilter" type="checkbox" CHECKED> <label for="otherFilter">Other</label></input><br>
+		</div><br>
+
+		<div><div class="category">Work Study</div>
+			<input class="filter" onclick="addFilter('ws', 'workStudyFilter')" id="workStudyFilter" type="checkbox" CHECKED> <label for="workStudyFilter">Work-Study</label></input><br>
+			<input class="filter" onclick="addFilter('nws', 'nonWorkStudyFilter')" id="nonWorkStudyFilter" type="checkbox" CHECKED> <label for="nonWorkStudyFilter">Non-Work-Study</label></input><br>
+		</div><br>
+
+		<div><div class="category">Location</div>
+			<input class="filter" onclick="addFilter('ocn', 'onCampusNorthFilter');" id="onCampusNorthFilter" type="checkbox" CHECKED> <label for="onCampusNorthFilter">On-Campus (North)</label></input><br>
+			<input class="filter" onclick="addFilter('ocs', 'onCampusSouthFilter');" id="onCampusSouthFilter" type="checkbox" CHECKED> <label for="onCampusSouthFilter">On-Campus (South)</label></input><br>
+			<input class="filter" onclick="addFilter('ocm', 'onCampusMidFilter');" id="onCampusMidFilter" type="checkbox" CHECKED> <label for="onCampusMidFilter">On-Campus (Mid)</label></input><br>
+			<input class="filter" onclick="addFilter('offc', 'offCampusFilter');" id="offCampusFilter" type="checkbox" CHECKED> <label for="offCampusFilter">Off-Campus</label></input><br>
+		</div><br>
+
+		<div><div class="category">Pay Rate</div>
+			<input class="filter" onclick="addFilter('9', 'nineDollarFilter');" id="nineDollarFilter" type="checkbox" CHECKED> <label for="nineDollarFilter">&lt; $9/hour</label></input><br>
+			<input class="filter" onclick="addFilter('910', 'nineToTenFilter');" id="nineToTenFilter" type="checkbox" CHECKED> <label for="nineToTenFilter">$9-$10/hour</label></input><br>
+			<input class="filter" onclick="addFilter('1011', 'tenDollarFilter');" id="tenDollarFilter" type="checkbox" CHECKED> <label for="tenDollarFilter">&gt; $10/hour</label></input><br>
+		</div><br>
+
+		<div><div class="category">Rating</div>
+			<input class="filter" onclick="addFilter('4', 'greaterFourRatingFilter')" id="greaterFourRatingFilter" type="checkbox" CHECKED> <label for="greaterFourRatingFilter">&gt; 4.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('3', 'greaterThreeRatingFilter')" id="greaterThreeRatingFilter" type="checkbox" CHECKED> <label for="greaterThreeRatingFilter">&gt; 3.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('2', 'greaterTwoRatingFilter')" id="greaterTwoRatingFilter" type="checkbox" CHECKED> <label for="greaterTwoRatingFilter">&gt; 2.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('1', 'greaterOneRatingFilter')" id="greaterOneRatingFilter" type="checkbox" CHECKED> <label for="greaterOneRatingFilter">&gt; 1.0/5.0</label></input><br>
+			<input class="filter" onclick="addFilter('lt1', 'lessOneRatingFilter')" id="lessOneRatingFilter" type="checkbox" CHECKED> <label for="lessOneRatingFilter">&lt; 1.0/5.0</label></input><br>
+		</div><br>
+
+		<div><div class="category">Distance From Campus (Center)</div>
+			<input class="filter" onclick="addFilter('0m', 'zeroMileDistanceFilter')" id="zeroMileDistanceFilter" type="checkbox" CHECKED> <label for="zeroMileDistanceFilter">0 Miles (On Campus)</label></input><br>
+			<input class="filter" onclick="addFilter('1/2m', 'lessHalfMileDistanceFilter')" id="lessHalfMileDistanceFilter" type="checkbox" CHECKED> <label for="lessHalfMileDistanceFilter">&lt; 1/2 Mile</label></input><br>
+			<input class="filter" onclick="addFilter('1/2-1m', 'halfToOneMileDistanceFilter')" id="halfToOneMileDistanceFilter" type="checkbox" CHECKED> <label for="halfToOneMileDistanceFilter">1/2 - 1 Mile</label></input><br>
+			<input class="filter" onclick="addFilter('1-2m', 'oneToTwoMileDistanceFilter')" id="oneToTwoMileDistanceFilter" type="checkbox" CHECKED> <label for="oneToTwoMileDistanceFilter">1 - 2 Miles</label></input><br>
+			<input class="filter" onclick="addFilter('2m', 'greaterTwoMileDistanceFilter')" id="greaterTwoMileDistanceFilter" type="checkbox" CHECKED> <label for="greaterTwoMileDistanceFilter">&gt; 2 Miles</label></input><br>
+		</div><br>
+
+		<div><div class="category">Date Posted</div>
+			<input class="filter" onclick="addFilter('last3', 'lastThreeDateFilter')" id="lastThreeDateFilter" type="checkbox" CHECKED> <label for="lastThreeDateFilter">Last 3 Days</label></input><br>
+			<input class="filter" onclick="addFilter('last7', 'lastSevenDateFilter')" id="lastSevenDateFilter" type="checkbox" CHECKED> <label for="lastSevenDateFilter">Last 7 Days</label></input><br>
+			<input class="filter" onclick="addFilter('last14', 'lastFourteenDateFilter')" id="lastFourteenDateFilter" type="checkbox" CHECKED> <label for="lastFourteenDateFilter">Last 14 Days</label></input><br>
+			<input class="filter" onclick="addFilter('lastm', 'lastMonthDateFilter')" id="lastMonthDateFilter" type="checkbox" CHECKED> <label for="lastMonthDateFilter">Last Month</label></input><br>
+		</div><br>
+
+		<div><div class="category">Other</div>
+			<input class="filter" onclick="addFilter2('fh', 'flexHoursOtherFilter')" id="flexHoursOtherFilter" type="checkbox"> <label for="flexHoursOtherFilter">Flexible Hours</label></input><br>
+			<input class="filter" onclick="addFilter2('his', 'internationalOtherFilter')" id="internationalOtherFilter" type="checkbox"> <label for="internationalOtherFilter">Hires International Students</label></input><br>
+			<input class="filter" onclick="addFilter2('ose', 'summerOtherFilter')" id="summerOtherFilter" type="checkbox"> <label for="summerOtherFilter">Offers Summer Employment</label></input><br>
+		</div><br>
+
+	</div>
+
+<!--=============Navigation bar section=============-->
+	<div id="header">
+		<div id="navigation">
+			<ul>
+				<a><li class="selected">Find Jobs</li></a>
+				<a><li>Review Jobs</li></a>
+
+				<a href="post.html"><li>Post Jobs</li></a>
+				<a><li>Ask a Question</li></a>
+			</ul>
+		</div>
+	</div>
+
+
+<!--=============Job posting list=============-->
+<div class="maincontent">
+
+<!--
+	Consultant job info-->
+		<div id="consultant" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('consultant')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Associate Consultant</div>
+			<div class="descdate">Posted on 10/14/13</div>
+			<br>
+			<a href="http://www.it.northwestern.edu/" target="_blank"><div class="descemployer">Northwestern University Information Technology</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Information Technology</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Work-study, Non-work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;On-Campus (Mid), Off-Campus (&lt;1/2 mile)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$9 - $10/hour</div><a href="http://www.it.northwestern.edu/secure/forms/con-application/" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div>&#x2713;</div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="http://www.it.northwestern.edu/secure/forms/con-application/" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+
+		<label href="javascript:void(0)" onclick="createJobDesc('consultant')">
+			<div class="posting it ons offc 910 4 1/2m lastm">
+				<div class="title">Associate Consultant</div>
+				<a href="http://www.it.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Northwestern University Information Technology)</div></a>
+				<div class="wage">$9 - $10/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 10/14/13</div>
+			</div>
+		</label>
+
+<!--
+	Chipotle job info-->
+
+		<div id="chipotle" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('chipotle')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Burrito Maker</div>
+			<div class="descdate">Posted on 12/8/14</div>
+			<br>
+			<a href="http://www.chipotle.com" target="_blank"><div class="descemployer">Chipotle</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Food Service</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Non-work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;Off-Campus (1/2 - 1 mile)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$10 - $11/hour</div><a href="http://jobs.chipotle.com/chicago/restaurant/jobid2278331-restaurant-team-member-crew-jobs" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div></div><br>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div></div><br>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div>&#x2713;</div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="http://jobs.chipotle.com/chicago/restaurant/jobid2278331-restaurant-team-member-crew-jobs" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+		<label href="javascript:void(0)" onclick="createJobDesc('chipotle')">
+			<div class="nonworkstudy fs nws offc 1011 3 1/2-1m lastm fh his">
+				<div class="title">Burrito Maker</div>
+				<a href="" target="_blank"><div class="employer"> &nbsp;(Chipotle)</div></a>
+				<div class="wage">$10 - $11/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 12/8/14</div>
+			</div>
+		</label>
+
+<!--
+	Subway cashier job info-->
+
+	<div id="subway" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('subway')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Cashier</div>
+			<div class="descdate">Posted on 11/30/13</div>
+			<br>
+			<a href="http://www.it.northwestern.edu/" target="_blank"><div class="descemployer">Subway</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Food Service</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Non-work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;Off-Campus (1/2 - 1 mile)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$10 - $11/hour</div><a href="https://www.mysubwaycareer.com/Home/Welcome?clt=en-US" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div>&#x2713;</div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="https://www.mysubwaycareer.com/Home/Welcome?clt=en-US" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+		<label href="javascript:void(0)" onclick="createJobDesc('subway')">
+			<div class="nonworkstudy nws fs offc 1011 2 1/2-1m lastm">
+				<div class="title">Cashier</div>
+				<a href="http://www.subway.com/" target="_blank"><div class="employer"> &nbsp;(Subway)</div></a>
+				<div class="wage">$10 - $11/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 11/30/13</div>
+			</div>
+		</label>
+
+<!--
+	Library job info-->
+
+		<div id="library" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('library')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Core Reserves Attendant</div>
+			<div class="descdate">Posted on 3/1/14</div>
+			<br>
+			<a href="http://www.it.northwestern.edu/" target="_blank"><div class="descemployer">Main Library</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Administrative/Clerical</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;On-Campus (Mid)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$9 - $10/hour</div><a href="https://www.library.northwestern.edu/node/add/student-job-application/3288?edit[field_supervisor][0][value]=Florence%20Heady&edit[field_student_department][0][value]=Library%20Personnel&edit[field_job_title][0][value]=Library%20Aide%204&edit[field_resume_flag][0][value]=No" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div></div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="https://www.library.northwestern.edu/node/add/student-job-application/3288?edit[field_supervisor][0][value]=Florence%20Heady&edit[field_student_department][0][value]=Library%20Personnel&edit[field_job_title][0][value]=Library%20Aide%204&edit[field_resume_flag][0][value]=No" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+		<label href="javascript:void(0)" onclick="createJobDesc('library')">
+			<div class="workstudy a/c ws ocm 910 4 0m last3 ose">
+				<div class="title">Core Reserves Attendant</div>
+				<a href="http://www.library.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Main Library)</div></a>
+				<div class="wage">$9 - $10/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 3/1/14</div>
+			</div>
+		</label>
+
+<!--
+	Norris Desk Clerk job info-->
+
+		<div id="deskclerk" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('deskclerk')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Desk Clerk</div>
+			<div class="descdate">Posted on 1/2/14</div>
+			<br>
+			<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="descemployer">Norris Student Center</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Administrative/Clerical</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Work-study, Non-work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;On-Campus (Mid)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$9 - $10/hour</div><a href="http://www.norris.northwestern.edu/jobs2/work-at-norris-2/" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div></div><br>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div></div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="http://www.norris.northwestern.edu/jobs2/work-at-norris-2/" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+		<label href="javascript:void(0)" onclick="createJobDesc('deskclerk')">
+			<div class="nonworkstudy a/c nws onm 910 2 0m lastm his ose">
+				<div class="title">Norris Desk Clerk</div>
+				<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
+				<div class="wage">$9 - $10/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 1/2/14</div>
+			</div>
+		</label>
+
+<!--
+	Al's Deli job info-->
+
+		<div id="sandwich" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('sandwich')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Sandwich Maker</div>
+			<div class="descdate">Posted on 12/20/13</div>
+			<br>
+			<a href="http://alsdeli.net/" target="_blank"><div class="descemployer">Al's Deli</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Food Services</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Non-work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;Off-Campus (1-2 miles)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$9 - $10/hour</div><a href="http://www.alsdeli.net/info/" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div></div><br>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div></div><br>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div></div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="http://www.alsdeli.net/info/" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+		<label href="javascript:void(0)" onclick="createJobDesc('sandwich')">
+			<div class="nonworkstudy fs nws offc 910 4 1-2m lastm fh his ose">
+				<div class="title">Sandwich Maker</div>
+				<a href="" target="_blank"><div class="employer"> &nbsp;(Al's Deli)</div></a>
+				<div class="wage">$9 - $10/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 12/20/13</div>
+			</div>
+		</label>
+
+<!--
+	TA job info-->
+
+		<div id="mathta" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('mathta')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Teaching Assistant</div>
+			<div class="descdate">Posted on 2/28/14</div>
+			<br>
+			<a href="http://math.northwestern.edu/" target="_blank"><div class="descemployer">Math Department</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Academic/Research</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Non-work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;On-Campus (Mid)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$9/hour</div><a href="http://math.northwestern.edu" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div></div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="http://math.northwestern.edu" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+		<label href="javascript:void(0)" onclick="createJobDesc('mathta')">
+			<div class="posting a/r ocm 9 2 0m last7 ose">
+				<div class="title">Teaching Assistant</div>
+				<a href="http://math.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Math Department)</div></a>
+				<div class="wage">$9/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 2/28/14</div>
+			</div>
+		</label>
+
+<!--
+	Technology assistant Norris job info-->
+
+		<div id="norristech" class="popupdescription">
+			<a href="javascript:void(0)" onclick = "closeJobDesc('norristech')" style="float:right">
+				<img src="images/close.png" alt=""/></a>
+			<div class="desctitle">Technology Assistant</div>
+			<div class="descdate">Posted on 1/12/14</div>
+			<br>
+			<a href="http://norris.northwestern.edu/" target="_blank"><div class="descemployer">Norris Student Center</div></a>
+			<div><div class="workcategory">Industry:</div>&nbsp;Information Technology</div><br>
+			<div><div class="workcategory">Job Type:</div>&nbsp;Work-study, Non-work-study</div><br>
+			<div><div class="workcategory">Location:</div>&nbsp;On-Campus (Mid)</div><br>
+			<div><div class="workcategory">Pay Rate:</div>&nbsp;$10/hour</div><a href="http://www.norris.northwestern.edu/jobs2/work-at-norris-2/" target="_blank"><div class="apply">Apply now!</div></a><br>
+			<div><div class="workcategory">Flexible Hours:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Hires International Students:&nbsp;</div>&#x2713;</div>
+			<div><div class="workcategory">Summer Employment Available:&nbsp;</div></div><br>
+
+			<div><div class="workcategory">Description:&nbsp;</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit enim lacus, a volutpat dolor adipiscing non. Phasellus sed tellus consequat, volutpat eros id, cursus quam. In sit amet risus non est sollicitudin faucibus. Nullam vestibulum imperdiet venenatis. Duis ut commodo massa. Suspendisse justo metus, posuere nec hendrerit in, aliquet ut dolor. Nam scelerisque lorem eu fringilla fermentum. Mauris sed eros vel urna condimentum faucibus eu id ligula. Nunc sed sagittis urna, vel hendrerit odio. Donec in ligula hendrerit, fringilla orci nec, consequat arcu. Donec dapibus ante id lectus tempus auctor.
+			</p><p>
+			Aliquam ac nulla ac est venenatis iaculis. Etiam laoreet nisl a massa congue semper. Nam diam tortor, interdum consequat odio quis, ultrices pulvinar felis. Integer pharetra, felis posuere ultrices molestie, velit mauris accumsan diam, quis fringilla ligula quam sit amet elit. Fusce imperdiet vel ipsum ac sagittis. Aenean orci odio, pellentesque eget libero et, luctus egestas est. Nullam et augue mollis, facilisis purus sit amet, viverra nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tristique luctus est in semper. Ut sem nisi, porttitor id magna et, porta sollicitudin turpis. Nulla sed consectetur nibh. Curabitur massa ipsum, laoreet vel augue a, accumsan dignissim nisi. Nam et viverra sem. Pellentesque eu commodo ligula.
+			</p></p>
+			Vestibulum augue arcu, dapibus vitae commodo non, lacinia a arcu. Quisque non quam ut nisi gravida commodo. Nulla elementum turpis nibh, quis tincidunt nibh tristique sit amet. In volutpat enim eu gravida consequat. Duis magna libero, cursus gravida tristique sit amet, viverra nec sem. In aliquam justo cursus malesuada imperdiet. Vivamus tincidunt ipsum nunc, eget suscipit neque fringilla et. Nulla nunc metus, vestibulum consequat risus a, accumsan rutrum dolor. Donec iaculis posuere faucibus. Ut neque diam, tincidunt id tellus faucibus, ultricies placerat libero. Ut at ipsum convallis, suscipit ipsum eu, commodo odio.</p></div><br>
+
+			<a href="http://www.norris.northwestern.edu/jobs2/work-at-norris-2/" target="_blank"><div class="apply">Apply now!</div></a>
+		</div>
+
+		<label href="javascript:void(0)" onclick="createJobDesc('norristech')">
+			<div class="workstudy it ws onm 910 3 0m lastm ose">
+				<div class="title">Technology Assistant</div>
+				<a href="http://www.norris.northwestern.edu/" target="_blank"><div class="employer"> &nbsp;(Norris Student Center)</div></a>
+				<div class="wage">$9 - $10/hour</div>
+				<div class="details">
+					<div class="first">Description:&nbsp;</div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum orci ut tortor ornare malesuada id et dui. Ut leo dolor, gravida feugiat quam vitae, iaculis cursus lectus. Duis et pharetra augue. Pellentesque interdum commodo urna id iaculis. Etiam a mauris sed dolor ornare placerat. Morbi tincidunt est ut velit viverra scelerisque. Quisque semper et ante sed imperdiet. Nam id sapien a turpis sagittis rhoncus. Sed pellentesque consequat metus, et sod...
+				</div>
+				<div class="dateposted">Posted on 1/12/14</div>
+			</div>
+		</label>
+	
+	</div>
+
+<!--=============Registration box remains hidden until these are changed=============-->
+	<div id="fade" class="overlay"></div>
+
+</body>
+
+</html>
