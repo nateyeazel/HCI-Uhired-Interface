@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>uHired Student Job Search</title>
+
+	<link rel="stylesheet" href="uhired.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:regular,italic,bold,bolditalic"/>
+
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="jquery.screwdefaultbuttonsV2.min.js" ></script>
+	<script src="uhired.js"></script>
+</head>
+
+<body>
+
+	<a href="uhired.html"><div class ="logo">UHired</div></a>
+
+	<div class = "logout">
+		<a href="uhired.html"><div class="logoutbutton">Log out</div></a></div>
+
+<!--=============Thanks for submitting box=============-->
+	<div id="lightreg" class="popupthankyou">
+		<a href="javascript:void(0)" onclick = "closelightbox();" style="float:right">
+			<img src="images/close.png" alt=""/></a>
+
+		Thank you for submitting a new job posting!
+	</div>
+
+
+<!--=============Filters section=============-->
+	<div class="filters">
+		<div class="filterhead">Manage Job Listings</div>
+		<div><div class="category">Active Listings (0)</div>
+			<li></li>
+		</div><br>
+
+			<div><div class="category">Inactive Listings (0)</div>
+			<li></li>
+		</div><br>
+
+		<div><div class="category">View Applicants (0)</div>
+			<li></li>
+		</div><br>
+	</div>
+
+<!--=============Navigation bar section=============-->
+	<div id="header">
+		<div id="navigation">
+			<ul>
+				<a href="loggedin.html"><li>Find Jobs</li></a>
+				<a><li class="selected">Post Jobs</li></a>
+				<a><li>Ask a Question</li></a>
+			</ul>
+		</div>
+	</div>
+
+
+<!--=============Posting Job section=============-->
+
+
+	<div class="addposting">
+
+		<div class="title">New Job posting</div>
+
+		<table alight="center" cellpadding="5" cellspacing="5" name="addlisting">
+			<tr>
+				<td colspan="2" class="Title" align="center">Post a Job</td>
+			</tr>
+			<tr>
+				<td class="label" name="addtitle">Job Title:</td>
+				<td align="left">
+					<input id="Field1" type="text" size="40"/></td>
+				</tr>
+
+				<tr>
+					<td class="label">Description:</td>
+					<td align="center">
+						<textarea id="Field2" type="text" rows="10" cols = "60"/></textarea></td>
+					</tr>
+					<tr>
+						<td class="label">Pay:</td>
+						<td align="left">
+							<input id="Field3" type="text" size="40"/>$/hr</td>
+						</tr>
+
+						<tr>
+							<td class="label">Part of campus:</td>
+							<td align="left">
+
+								<input id="Field4" type="text" size="40"/></td></td>
+							</tr>
+						<tr>
+							<td class="label">Distance From Campus:</td>
+							<td>
+								<select>
+									<option> < 1/2 Mile </option>
+									<option>1/2 Mile - 1 Mile </option>
+									<option>1 Mile - 2 Miles </option>
+									<option> > 2 Miles </option>
+
+								</select>
+							</td>
+
+							</tr>
+							<tr>
+								<td class="label">Job Type:</td>
+								<td>
+									<select>
+										<option> Workstudy</option>
+										<option> Non-Workstudy </option>
+									</select>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="label">Industry:</td>
+								<td align="left">
+									<select>
+										<option>Academic/Research </option>
+										<option>Administrative/Clerical </option>
+										<option>Food Service </option>
+										<option>Information Technology </option>
+										<option>Other </option>
+									</select>
+								</td>
+							</tr>
+
+							<tr>
+								<td></td><td>
+									<label><input type = "checkbox" size = "40">&nbsp;Flexible Hours</label><br> <br>
+									<labeL><input type = "checkbox">&nbsp;Hires International Students</label><br><br>
+									<label><input type = "checkbox">&nbsp;Summer Employment Available<label><br><br>
+									</td>
+								</tr>
+		</table>
+		<a href="javascript:void(0)" onclick="createlightboxregister();" style="text-decoration: none"><div id="register" class="submit">Submit</div></a>
+	</div>
+
+<!--=============Registration box remains hidden until these are changed=============-->
+	<div id="fade" class="overlay"></div>
+
+</body>
+</html>
