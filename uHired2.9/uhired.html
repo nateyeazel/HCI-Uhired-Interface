@@ -13,7 +13,6 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:regular,italic,bold,bolditalic"/>
 
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="jquery.screwdefaultbuttonsV2.min.js" ></script>
 	<script src="uhired.js"></script>
 </head>
 
@@ -27,6 +26,59 @@
 		<a href="javascript:void(0)" onclick="createlightboxregister()"><div class="topbutton" id="reg">Register</div></a>
 		<a href="javascript:void(0)" onclick="createlightboxlogin()"><div class="topbutton2" id="reg">Log In</div></a>
 
+	</div>
+
+<!--NOT IMPORTANT, BUT NEEDED FOR JAVASCRIPT-->
+<!--=============Thanks for submitting box=============-->
+	<div id="thankyou" class="popupthankyou">
+		<a href="javascript:void(0)" onclick = "closelightbox();" style="float:right">
+			<img src="images/close.png" alt=""/></a>
+
+		Thank you for submitting a question!
+	</div>
+<!--NOT IMPORTANT, BUT NEEDED FOR JAVASCRIPT-->
+<!--=============Pop up submission form when 'Submit a Question' is selected=============-->
+	<div id="questionbox" class="popupregcontent">
+		<a href="javascript:void(0)" onclick = "closelightbox()" style="float:right">
+			<img src="images/close.png" alt=""/></a>
+
+		<table alight="center" cellpadding="5" cellspacing="5">
+			<tr>
+				<td colspan="2" class="Title" align="center">Submit a Question</td>
+			</tr>
+			<tr>
+				<td class="label">First Name:</td>
+				<td align="center">
+					<input autofocus id="Field1" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Last Name:</td>
+				<td align="center">
+					<input id="Field2" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Email:</td>
+				<td align="center">
+					<input id="Field3" type="text" size="40"/></td>
+			</tr>
+			<tr>
+				<td class="label">Student:</td>
+				<td>
+					<input id="Field7" type="checkbox"/></td>
+			</tr>
+			<tr>
+				<td class="label">Employer:</td>
+				<td>
+					<input id="Field7" type="checkbox"/></td>
+			</tr>
+			<tr>
+				<td class="label">Question:</td>
+				<td>
+					<form><textarea rows="5" cols="30"></textarea></form></td>
+			</tr>
+
+		</table>
+		<a href="javascript:void(0)" onclick="closelightbox(); createlightboxthankyou();" style="text-decoration: none"><div id="register" class="regbutton">Submit</div></a>
 	</div>
 
 <!--=============Pop up Registration Box when 'Register' is selected=============-->
@@ -105,7 +157,7 @@
 
 		</table>
 		<a href="loggedin.html" style="text-decoration: none"><div class="regbutton">Log in</div></a>
-		<a href="javascript:void(0)" onclick="closelightbox(); createlightboxregister()"><div class="text" class="last" style="text-align:center; margin-top:10px;">&laquo; Not registered?</div></a>
+		<a href="javascript:void(0)" onclick="closelightbox(); createlightboxregister();"><div class="text" class="last" style="text-align:center; margin-top:10px;">&laquo; Not registered?</div></a>
 	</div>
 
 <!--=============Filters section=============-->
