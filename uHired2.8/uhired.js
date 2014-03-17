@@ -17,10 +17,16 @@ function closelightbox() {
 	document.getElementById('fade').style.display='none';
 	document.getElementById('lightreg').style.display='none';
 	document.getElementById('lightlogin').style.display='none';
+	document.getElementById('thankyou').style.display='none';
 }
 
 function createlightboxlogin() {
 	document.getElementById('lightlogin').style.display='block';
+	document.getElementById('fade').style.display='block';
+}
+
+function createlightboxthankyou() {
+	document.getElementById('thankyou').style.display='block';
 	document.getElementById('fade').style.display='block';
 }
 
@@ -37,6 +43,8 @@ function closeJobDesc(characteristic) {
 
 $(window).click(function(){
   $(".popupdescription").stop().animate({"marginTop": ($(window).scrollTop()) - 100 + "px"});
+  $(".popupregcontent").stop().animate({"marginTop": ($(window).scrollTop()) - 100 + "px"});
+  $(".popuplogincontent").stop().animate({"marginTop": ($(window).scrollTop()) - 100 + "px"});
   $(".popupthankyou").stop().animate({"marginTop": ($(window).scrollTop()) - 100 + "px"});
 });
 

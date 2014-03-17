@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>uHired Student Job Search</title>
+
+	<link rel="stylesheet" href="uhired.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:regular,italic,bold,bolditalic"/>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:regular,italic,bold,bolditalic"/>
+
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="jquery.screwdefaultbuttonsV2.min.js" ></script>
+	<script src="uhired.js"></script>
+</head>
+
+<body>
+
+	<a href="uhired.html"><div class ="logo">UHired</div></a>
+
+	<div class = "logout">
+		<a href="questionL.html"><div class="logoutbutton">Log out</div></a></div>
+
+<!--=============Thanks for submitting box=============-->
+	<div id="lightreg" class="popupthankyou">
+		<a href="javascript:void(0)" onclick = "closelightbox();" style="float:right">
+			<img src="images/close.png" alt=""/></a>
+
+		Thank you for submitting a new job posting!
+	</div>
+
+
+<!--=============Filters section=============-->
+	<div class="filters">
+		<div class="filterhead">Contact Information</div>
+		<div class="category">P: (847) 491-4357</div>
+		<br>
+		<div class="category">E: info@uhired.com</div>
+		<br>
+		<div class="category">A: 1800 Sherman Ave.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evanston, IL 60208</div>
+	</div>
+
+<!--=============Navigation bar section=============-->
+	<div id="header">
+		<div id="navigation">
+			<ul>
+				<a href="loggedin.html"><li>Find Jobs</li></a>
+				<a href="post.html"><li>Post Jobs</li></a>
+				<a><li class="selected">Ask a Question</li></a>
+			</ul>
+		</div>
+	</div>
+
+
+<!--=============FAQ section=============-->
+
+	<a href="loggedin.html" style="text-decoration: none;"><div id="register" class="regbutton" style="font-size: 25px; margin-left:233px; height: 30px;width:250px">Submit a Question</div></a>
+
+	<a href="loggedin.html" style="text-decoration: none;"><div id="register" class="regbutton" style="font-size: 25px; margin-left:233px; height: 30px;width:250px">Submit a Question</div></a>
+
+<!--=============Registration box remains hidden until these are changed=============-->
+	<div id="fade" class="overlay"></div>
+
+</body>
+</html>
