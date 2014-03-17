@@ -18,6 +18,7 @@ function closelightbox() {
 	document.getElementById('lightreg').style.display='none';
 	document.getElementById('lightlogin').style.display='none';
 	document.getElementById('thankyou').style.display='none';
+	document.getElementById('questionbox').style.display='none';
 }
 
 function createlightboxlogin() {
@@ -30,6 +31,10 @@ function createlightboxthankyou() {
 	document.getElementById('fade').style.display='block';
 }
 
+function createlightboxquestion() {
+	document.getElementById('questionbox').style.display='block';
+	document.getElementById('fade').style.display='block';
+}
 
 function createJobDesc(characteristic) {
 	document.getElementById(characteristic).style.display='block';
