@@ -42,7 +42,7 @@ $(window).click(function(){
 
 
 function toggleresults(c) {
-	document.maincontent.getElementsByClassName('ws').style.display='none';
+	document.maincontent.getElementsByClassName(c).style.display='none';
 }
 
 function getElementsByClassName(classname) {
@@ -61,12 +61,12 @@ function addFilter(classname, node) {
 
 	if(document.getElementById(node).checked) {
 		for(i in elements) {
-			elements[i].style.display = "none";
+			elements[i].style.display = "block";
 		};
 	}
 	else {
 		for(i in elements) {
-			elements[i].style.display = "block";
+			elements[i].style.display = "none";
 		};
 	}
 }
@@ -77,12 +77,12 @@ function addFilter2(classname, node) {
 
 	if(document.getElementById(node).checked) {
 		for(i in elements) {
-			elements[i].style.display = "block";
+			elements[i].style.display = "none";
 		};
 	}
 	else {
 		for(i in elements) {
-			elements[i].style.display = "none";
+			elements[i].style.display = "block";
 		};
 	}
 }
