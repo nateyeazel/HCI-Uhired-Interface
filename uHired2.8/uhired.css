@@ -24,6 +24,14 @@ body {
     text-align: center;
 }
 
+.logo a {
+	font-family: 'lato';
+	font-size: 35px;
+	font-style: bold;
+	color: white;
+	letter-spacing: 8px;
+	text-decoration: none;
+}
 /*
 ======================Log in and registration options======================
 */
